@@ -1,0 +1,10 @@
+#!/system/bin/sh
+log -p i -t start "*******************Elixium_OS*****************";
+log -p i -t start "*             *******       **               *";
+log -p i -t start "*                  *       ***               *";
+log -p i -t start "*                 *          *               *";
+log -p i -t start "*                *           *               *";
+log -p i -t start "*               *            *               *";
+log -p i -t start "*              *      *      *               *";
+log -p i -t start "**********************************************";
+

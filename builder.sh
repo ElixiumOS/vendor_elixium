@@ -17,8 +17,8 @@
 
 ver_script=1.6
 
-elixium_dir=elixium
-elixium_build_dir=$elixium_dir-build
+elixium_dir=Elixium
+elixium_build_dir=$elixium_dir
 
 if ! [ -d ~/$elixium_build_dir ]; then
 	echo -e "${bldred}No elixium-build directory, creating...${txtrst}"
@@ -66,22 +66,22 @@ function build_elixium {
 	FILE2=elixium_dir_$configb-Changelog.txt
 	if [ -f ./$FILE ]; then
 		echo -e "${bldgrn}Copyng zip file...${txtrst}"
-		if [ -f ~/$elixium_dir_build_dir/$FILE ]; then
-			rm ~/$elixium_dir_build_dir/$FILE
-			cp $FILE ~/$elixium_dir_build_dir/$FILE
+		if [ -f ~/$elixium_build_dir/$FILE ]; then
+			rm ~/$elixium_build_dir/$FILE
+			cp $FILE ~/$elixium_build_dir/$FILE
 		else
-			cp $FILE ~/$elixium_dir_build_dir/$FILE
+			cp $FILE ~/$elixium_build_dir/$FILE
 		fi
 	else
 		echo -e "${bldred}Error copyng zip!${txtrst}"
 	fi
 	if [ -f ./$FILE2 ]; then
 		echo -e "${bldgrn}Copyng changelog...${txtrst}"
-		if [ -f ~/$elixium_dir_build_dir/$FILE2 ]; then
-			rm ~/$elixium_dir_build_dir/$FILE2
-			cp $FILE2 ~/$elixium_dir_build_dir/$FILE2
+		if [ -f ~/$elixium_build_dir/$FILE2 ]; then
+			rm ~/$elixium_build_dir/$FILE2
+			cp $FILE2 ~/$elixium_build_dir/$FILE2
 		else
-			cp $FILE2 ~/$elixium_dir_build_dir/$FILE2
+			cp $FILE2 ~/$elixium_build_dir/$FILE2
 		fi
 	else
 		echo -e "${bldred}Error copyng changelog!${txtrst}"

@@ -19,6 +19,12 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := Chrome.apk
 
+ifneq ($(filter arm64,$(TARGET_ARCH)),)
+LOCAL_SRC_FILES := Chrome-arm64.apk
+else
+LOCAL_SRC_FILES := Chrome-arm.apk
+endif
+
 LOCAL_MODULE := Chrome
 
 LOCAL_JACK_ENABLED := disabled

@@ -86,7 +86,6 @@ PRODUCT_PACKAGES += \
     Chrome \
     GoogleCamera \
     Launcher \
-    Dialer \
     GoogleWallpaper \
     Busybox \
     LockClock \

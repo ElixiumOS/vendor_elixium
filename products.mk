@@ -91,6 +91,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     masquerade \
     Stk \
+    LatinIME \
     Terminal
 
 # Init.d script support

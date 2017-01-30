@@ -72,6 +72,15 @@ ADDITIONAL_DEFAULT_PROPERTIES := \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/elixium/overlay/common
 
+# Walpaper overlay
+ifeq ($(filter true,$(TARGET_BOOTANIMATION_QHD)),)
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/elixium/overlay/wallpaper/wallpaper-qhd
+else
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/elixium/overlay/wallpaper/wallpaper-fhd
+endif
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml

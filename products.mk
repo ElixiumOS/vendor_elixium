@@ -120,10 +120,5 @@ PRODUCT_PACKAGES += \
     org.dirtyunicorns.utils
 
 # Bootanimation
-ifeq ($(filter true,$(TARGET_BOOTANIMATION_QHD)),)
 PRODUCT_COPY_FILES += \
     vendor/elixium/bootanimation/bootanimation.zip:system/media/bootanimation.zip
-else
-PRODUCT_COPY_FILES += \
-    vendor/elixium/bootanimation/bootanimationFHD.zip:system/media/bootanimation.zip
-endif

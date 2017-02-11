@@ -101,7 +101,8 @@ PRODUCT_PACKAGES += \
     masquerade \
     Stk \
     LatinIME \
-    Terminal
+    Terminal \
+    MagiskManager
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
@@ -115,9 +116,9 @@ PRODUCT_COPY_FILES += \
     vendor/elixium/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/elixium/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions
 
-# DU Utils Library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
+# Magisk
+PRODUCT_COPY_FILES += \
+   vendor/validus/prebuilt/common/magisk.zip:system/addon.d/magisk.zip
 
 # The bootanimation makefile
 include vendor/elixium/bootanimation/bootanimation.mk

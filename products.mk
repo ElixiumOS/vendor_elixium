@@ -120,5 +120,16 @@ PRODUCT_PACKAGES += \
     org.dirtyunicorns.utils
 
 # Bootanimation
+ifeq ($(filter x1000,$(BOOTANIMATION_RESOLUTION)),)
+PRODUCT_COPY_FILES += \
+    vendor/elixium/bootanimation/bootanimation-1000.zip:system/media/bootanimation.zip
+else if ($(filter x800,$(BOOTANIMATION_RESOLUTION)),)
+PRODUCT_COPY_FILES += \
+    vendor/elixium/bootanimation/bootanimation-800.zip:system/media/bootanimation.zip
+else if ($(filter x600,$(BOOTANIMATION_RESOLUTION)),)
+PRODUCT_COPY_FILES += \
+    vendor/elixium/bootanimation/bootanimation-600.zip:system/media/bootanimation.zip
+else
 PRODUCT_COPY_FILES += \
     vendor/elixium/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+endif

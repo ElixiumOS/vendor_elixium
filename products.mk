@@ -118,7 +118,7 @@ PRODUCT_COPY_FILES += \
 
 # Magisk
 PRODUCT_COPY_FILES += \
-   vendor/validus/prebuilt/common/magisk.zip:system/addon.d/magisk.zip
+   vendor/elixium/prebuilt/magisk/magisk.zip:system/addon.d/magisk.zip
 
 # The bootanimation makefile
 include vendor/elixium/bootanimation/bootanimation.mk

@@ -120,5 +120,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    vendor/elixium/prebuilt/magisk/magisk.zip:system/addon.d/magisk.zip
 
+# Bootanimations
+include vendor/elixium/bootanimation/bootanimation.mk
+
 # The bootanimation makefile
 include vendor/elixium/bootanimation/bootanimation.mk

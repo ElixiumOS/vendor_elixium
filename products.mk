@@ -122,7 +122,7 @@ PRODUCT_COPY_FILES += \
 
 # Bootanimations
 #Bootanimation setted on 1000x1000
-ifneq ($$(BOOTANIMATION_1000P),true)
+ifneq ($(BOOTANIMATION_1000P),true)
 PRODUCT_COPY_FILES += \
     vendor/elixium/bootanimation/bootanimation-1000.zip:system/media/bootanimation.zip
 else

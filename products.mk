@@ -121,7 +121,15 @@ PRODUCT_COPY_FILES += \
    vendor/elixium/prebuilt/magisk/magisk.zip:system/addon.d/magisk.zip
 
 # Bootanimations
-include vendor/elixium/bootanimation/bootanimation.mk
+#Bootanimation setted on 1000x1000
+ifneq ($$(BOOTANIMATION_1000P),true)
+PRODUCT_COPY_FILES += \
+    vendor/elixium/bootanimation/bootanimation-1000.zip:system/media/bootanimation.zip
+else
+PRODUCT_COPY_FILES += \
+    vendor/elixium/bootanimation/bootanimation-800.zip:system/media/bootanimation.zip
+endif
+
 
 # The bootanimation makefile
 include vendor/elixium/bootanimation/bootanimation.mk

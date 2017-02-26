@@ -130,6 +130,3 @@ PRODUCT_COPY_FILES += \
     vendor/elixium/bootanimation/bootanimation-800.zip:system/media/bootanimation.zip
 endif
 
-
-# The bootanimation makefile
-include vendor/elixium/bootanimation/bootanimation.mk

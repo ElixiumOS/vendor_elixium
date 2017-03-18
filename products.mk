@@ -98,7 +98,7 @@ PRODUCT_PACKAGES += \
     GoogleWallpaper \
     Busybox \
     LockClock \
-    masquerade \
+    ThemeInterfacer \
     Stk \
     LatinIME \
     Terminal \

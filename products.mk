@@ -1,5 +1,4 @@
-# Copyright (C) 2016-2017 AOTP - Android Open Tuning Project
-# Copyright (C) 2016-2017 ElixiumOS
+# Copyright (C) 2017 ElixiumOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,7 +14,6 @@
 
 #All the product copy files
 PRODUCT_COPY_FILES += \
-    vendor/elixium/etc-permission/permissions/com.cyngn.audiofx.xml:system/etc/permissions \
     vendor/elixium/fonts/SST-UltraLight.ttf:system/fonts/SST-UltraLight.ttf \
     vendor/elixium/fonts/.SST-Condensed.ttf:system/fonts/.SST-Condensed.ttf \
     vendor/elixium/fonts/.SST-CondensedBd.ttf:system/fonts/.SST-CondensedBd.ttf \
@@ -30,6 +28,9 @@ PRODUCT_COPY_FILES += \
     vendor/elixium/fonts/.SSTVietnamese-Bold.ttf:system/fonts/.SSTVietnamese-Bold.ttf \
     vendor/elixium/fonts/.SSTVietnamese-Roman.ttf:system/fonts/.SSTVietnamese-Roman.ttf
 
+# AudioFX permission
+PRODUCT_COPY_FILES += \
+    vendor/elixium/etc/permissions/com.cyngn.audiofx.xml:system/etc/permissions \
 
 PRODUCT_BUILD_PROP_OVERRIDES := BUILD_DISPLAY_ID=$(TARGET_PRODUCT)-$(PLATFORM_VERSION)-$(BUILD_ID)
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BUILD_TYPE=user
@@ -92,17 +93,16 @@ PRODUCT_COPY_FILES += \
 # Extra packages
 PRODUCT_PACKAGES += \
     AudioFX \
-    Chrome \
-    GoogleCamera \
-    Launcher \
-    GoogleWallpaper \
     Busybox \
-    LockClock \
-    ThemeInterfacer \
-    Stk \
+    Camera2 \
+    GoogleWallpaper \
+    Launcher \
     LatinIME \
-    Terminal \
-    MagiskManager
+    MagiskManager \
+    Stk \
+    Substratum \
+    ThemeInterfacer \
+    Terminal
 
 # Init.d script support
 PRODUCT_COPY_FILES += \

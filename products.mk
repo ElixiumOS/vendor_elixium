@@ -96,7 +96,7 @@ PRODUCT_PACKAGES += \
     Busybox \
     Camera2 \
     GoogleWallpaper \
-    Launcher \
+    Launcher3 \
     LatinIME \
     MagiskManager \
     Stk \
@@ -104,6 +104,12 @@ PRODUCT_PACKAGES += \
     ThemeInterfacer \
     Terminal
 
+# Pixels additional packages
+PRODUCT_PACKAGES += \
+    UsTwoWalls \
+    BReelWalls \
+    NexusWallpapersStubPrebuilt
+	
 # Init.d script support
 PRODUCT_COPY_FILES += \
     vendor/elixium/prebuilt/bin/sysinit:system/bin/sysinit \

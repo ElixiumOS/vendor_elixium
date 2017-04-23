@@ -74,7 +74,7 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/elixium/overlay/common
 
 # Walpaper overlay
-ifeq ($(filter true,$(TARGET_BOOTANIMATION_QHD)),)
+ifeq ($(filter true,$(WALLPAPER_QHD)),)
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/elixium/overlay/wallpaper/wallpaper-qhd
 else
@@ -134,5 +134,10 @@ PRODUCT_COPY_FILES += \
 else
 PRODUCT_COPY_FILES += \
     vendor/elixium/bootanimation/bootanimation-800.zip:system/media/bootanimation.zip
+endif
+
+# LCD Overlay
+ifneq ($(filter oneplus3 griffin,$(PRODUCT_DEVICE)),)
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=460
 endif
 

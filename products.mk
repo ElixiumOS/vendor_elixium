@@ -94,7 +94,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     Busybox \
-    Camera2 \
+    Snap \
     GoogleWallpaper \
     Launcher3 \
     LatinIME \

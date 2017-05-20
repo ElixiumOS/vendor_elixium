@@ -13,20 +13,20 @@
 # limitations under the License.
 
 #All the product copy files
-PRODUCT_COPY_FILES += \
-    vendor/elixium/fonts/SST-UltraLight.ttf:system/fonts/SST-UltraLight.ttf \
-    vendor/elixium/fonts/.SST-Condensed.ttf:system/fonts/.SST-Condensed.ttf \
-    vendor/elixium/fonts/.SST-CondensedBd.ttf:system/fonts/.SST-CondensedBd.ttf \
-    vendor/elixium/fonts/.SST-Heavy.ttf:system/fonts/.SST-Heavy.ttf \
-    vendor/elixium/fonts/.SST-HeavyItalic.ttf:system/fonts/.SST-HeavyItalic.ttf \
-    vendor/elixium/fonts/.SST-Light.ttf:system/fonts/.SST-Light.ttf \
-    vendor/elixium/fonts/.SST-LightItalic.ttf:system/fonts/.SST-LightItalic.ttf \
-    vendor/elixium/fonts/.SST-Medium.ttf:system/fonts/.SST-Medium.ttf \
-    vendor/elixium/fonts/.SST-MediumItalic.ttf:system/fonts/.SST-MediumItalic.ttf \
-    vendor/elixium/fonts/.SST-UltraLight.ttf:system/fonts/.SST-UltraLight.ttf \
-    vendor/elixium/fonts/.SST-UltraLightItalic.ttf:system/fonts/.SST-UltraLightItalic.ttf \
-    vendor/elixium/fonts/.SSTVietnamese-Bold.ttf:system/fonts/.SSTVietnamese-Bold.ttf \
-    vendor/elixium/fonts/.SSTVietnamese-Roman.ttf:system/fonts/.SSTVietnamese-Roman.ttf
+#PRODUCT_COPY_FILES += \
+#    vendor/elixium/fonts/SST-UltraLight.ttf:system/fonts/SST-UltraLight.ttf \
+#    vendor/elixium/fonts/.SST-Condensed.ttf:system/fonts/.SST-Condensed.ttf \
+#    vendor/elixium/fonts/.SST-CondensedBd.ttf:system/fonts/.SST-CondensedBd.ttf \
+#    vendor/elixium/fonts/.SST-Heavy.ttf:system/fonts/.SST-Heavy.ttf \
+#    vendor/elixium/fonts/.SST-HeavyItalic.ttf:system/fonts/.SST-HeavyItalic.ttf \
+#    vendor/elixium/fonts/.SST-Light.ttf:system/fonts/.SST-Light.ttf \
+#    vendor/elixium/fonts/.SST-LightItalic.ttf:system/fonts/.SST-LightItalic.ttf \
+#    vendor/elixium/fonts/.SST-Medium.ttf:system/fonts/.SST-Medium.ttf \
+#    vendor/elixium/fonts/.SST-MediumItalic.ttf:system/fonts/.SST-MediumItalic.ttf \
+#    vendor/elixium/fonts/.SST-UltraLight.ttf:system/fonts/.SST-UltraLight.ttf \
+#    vendor/elixium/fonts/.SST-UltraLightItalic.ttf:system/fonts/.SST-UltraLightItalic.ttf \
+#   vendor/elixium/fonts/.SSTVietnamese-Bold.ttf:system/fonts/.SSTVietnamese-Bold.ttf \
+#    vendor/elixium/fonts/.SSTVietnamese-Roman.ttf:system/fonts/.SSTVietnamese-Roman.ttf
 
 # AudioFX permission
 PRODUCT_COPY_FILES += \
@@ -38,23 +38,21 @@ PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BUILD_TYPE=user
 # Some overlays
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
+    ro.com.google.clientidbase=android-google \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
-    ro.com.google.clientidbase=android-google \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
-    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
-    ro.error.receiver.system.apps=com.google.android.gms \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.setupwizard.network_required=false \
-    ro.setupwizard.gservices_delay=-1 \
     ro.com.android.dataroaming=false \
-    drm.service.enabled=true \
-    net.tethering.noprovisioning=true \
+    ro.setupwizard.rotation_locked=true \
+    ro.build.selinux=0 \
     persist.sys.dun.override=0 \
-    ro.build.selinux=1 \
-    ro.adb.secure=0 \
-    ro.storage_manager.enabled=1
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so \
+    ro.substratum.verified=true \
+    ro.opa.eligible_device=true \
+    persist.sys.recovery_update=false
 
 # Needs for MTP Dirty Hack
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -68,6 +66,15 @@ ADDITIONAL_DEFAULT_PROPERTIES := \
     ro.adb.secure=0 \
     ro.secure=0 \
     persist.service.adb.enable=1
+
+# Set cache location
+ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.device.cache_dir=/data/cache
+else
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.device.cache_dir=/cache
+endif
 
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += \
@@ -94,15 +101,48 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     Busybox \
-    Snap \
-    GoogleWallpaper \
-    Launcher3 \
+    BluetoothExt \
+    MusicFX \
     LatinIME \
-    MagiskManager \
-    Stk \
-    Substratum \
+    libemoji \
+    libsepol \
+    Launcher3 \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    bash \
+    powertop \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
+    GoogleWallpaper \
+    mkfs.ntfs \
+    fsck.ntfs \
+    mount.ntfs \
+    gdbserver \
+    micro_bench \
+    oprofiled \
+    sqlite3 \
+    strace \
+    Snap \
     ThemeInterfacer \
+    Terminal \
+    AEXPapers \
+    Turbo \
+    MagiskManager \
+    Substratum \
+    Launcher3 \
     Terminal
+
+# MusicFX advanced effects
+ifneq ($(TARGET_NO_DSPMANAGER), true)
+PRODUCT_PACKAGES += \
+    libcyanogen-dsp \
+    audio_effects.conf
+endif
 
 # Pixels additional packages
 PRODUCT_PACKAGES += \
@@ -127,7 +167,6 @@ PRODUCT_COPY_FILES += \
    vendor/elixium/prebuilt/magisk/magisk.zip:system/addon.d/magisk.zip
 
 # Bootanimations
-#Bootanimation setted on 1000x1000
 ifneq ($(BOOTANIMATION_1000P),true)
 PRODUCT_COPY_FILES += \
     vendor/elixium/bootanimation/bootanimation-1000.zip:system/media/bootanimation.zip

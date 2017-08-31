@@ -53,6 +53,10 @@ PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
     vendor/discovery/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
 
+# Fix Dialer
+PRODUCT_COPY_FILES +=  \
+    vendor/discovery/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml 
+
 # discovery-specific startup services
 PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \

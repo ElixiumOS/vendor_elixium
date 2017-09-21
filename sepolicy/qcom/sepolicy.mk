@@ -1,2 +1,2 @@
 BOARD_SEPOLICY_DIRS += \
-    vendor/gzosp/sepolicy/qcom
+    vendor/discovery/sepolicy/qcom

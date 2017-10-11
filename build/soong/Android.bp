@@ -1,7 +1,0 @@
-bootstrap_go_package {
-    name: "soong-discovery",
-    pkgPath: "discovery/soong/android",
-    srcs: [
-        "android/variable.go",
-    ],
-}

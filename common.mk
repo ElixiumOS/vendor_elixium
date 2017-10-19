@@ -1,4 +1,5 @@
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+ELIXIUM_BUILD += true
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -21,8 +22,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Backup tool
 PRODUCT_COPY_FILES += \
     vendor/elixium/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/elixium/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/elixium/prebuilt/common/bin/50-discovery.sh:system/addon.d/50-discovery.sh
+    vendor/elixium/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
@@ -154,12 +154,6 @@ PRODUCT_COPY_FILES += \
 	  vendor/elixium/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
     vendor/elixium/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 endif
-
-# Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/elixium/prebuilt/common/addon.d/50-base.sh:system/addon.d/50-base.sh \
-    vendor/elixium/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/elixium/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
 
 # Google Camera with HDR+ enabled for Snapdragon 820/821 and 835 devices
 ifneq ($(TARGET_BOARD_PLATFORM),msm8996,msm8998)

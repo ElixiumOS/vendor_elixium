@@ -1,4 +1,4 @@
-package android
+package android_elix
 type Product_variables struct {
 	Has_legacy_camera_hal1 struct {
 		Cflags []string

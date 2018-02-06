@@ -110,10 +110,7 @@ PRODUCT_PACKAGES += \
 
 # Extra ElixiumOS packages
 PRODUCT_PACKAGES += \
-#		GoogleWallPicker
 	  Turbo
-#	  GClock
-#   OPGallery
 
 # Charger
 ifneq ($(WITH_CM_CHARGER),false)
@@ -158,6 +155,6 @@ PRODUCT_BOOT_JARS += \
 endif
 
 # Google sounds
-include vendor/gzosp/google/GoogleAudio.mk
+include vendor/elixium/google/GoogleAudio.mk
 
 EXTENDED_POST_PROCESS_PROPS := vendor/elixium/tools/gzosp_process_props.py
